@@ -43,11 +43,14 @@ or
 ./scripts/requests-bertdl.py
 ```
 
-for both, expected behavior is to print out a `json` of the format
+for both, expected behavior is to print out `json` records of the format
 
 ```
 {"outputs": [0.8566522, ...]}
 ```
+
+and / or `csv` records (just the probabilities in `outputs` above separated by
+newlines)
 
 you can also review the log messages that are written out to `log.txt` in the 
 top level directory.
