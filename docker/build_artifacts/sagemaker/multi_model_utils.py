@@ -11,16 +11,17 @@
 # ANY KIND, either express or implied. See the License for the specific
 # language governing permissions and limitations under the License.
 import fcntl
+import signal
 import time
 from contextlib import contextmanager
 
-MODEL_CONFIG_FILE = '/sagemaker/model-config.cfg'
-DEFAULT_LOCK_FILE = '/sagemaker/lock-file.lock'
+MODEL_CONFIG_FILE = "/sagemaker/model-config.cfg"
+DEFAULT_LOCK_FILE = "/sagemaker/lock-file.lock"
 
 
 @contextmanager
 def lock(path=DEFAULT_LOCK_FILE):
-    f = open(path, 'w')
+    f = open(path, "w")
     fd = f.fileno()
     fcntl.lockf(fd, fcntl.LOCK_EX)
 
@@ -29,6 +30,19 @@ def lock(path=DEFAULT_LOCK_FILE):
     finally:
         time.sleep(1)
         fcntl.lockf(fd, fcntl.LOCK_UN)
+
+
+@contextmanager
+def timeout(seconds=60):
+    def _raise_timeout_error(signum, frame):
+        raise Exception(408, "Timed out after {} seconds".format(seconds))
+
+    try:
+        signal.signal(signal.SIGALRM, _raise_timeout_error)
+        signal.alarm(seconds)
+        yield
+    finally:
+        signal.alarm(0)
 
 
 class MultiModelException(Exception):

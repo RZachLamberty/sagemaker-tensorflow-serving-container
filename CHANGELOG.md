@@ -1,5 +1,105 @@
 # Changelog
 
+## v1.7.0 (2020-07-29)
+
+### Features
+
+ * add model_version_policy to model config
+
+## v1.6.25 (2020-07-23)
+
+### Bug Fixes and Other Changes
+
+ * change single quotes to double quotes
+
+## v1.6.24 (2020-07-17)
+
+### Bug Fixes and Other Changes
+
+ * update MME Pre/Post-Processing model and script paths
+ * increasing max_retry for model availability check
+ * multi-model-endpoint support
+
+### Documentation Changes
+
+ * update README for multi-model endpoint
+
+## v1.6.23.post0 (2020-06-25)
+
+### Testing and Release Infrastructure
+
+ * add issue templates
+
+## v1.6.23 (2020-06-11)
+
+### Bug Fixes and Other Changes
+
+ * error code files for TFS2.2 (copied from pip install tf)
+
+## v1.6.22.post0 (2020-05-13)
+
+### Testing and Release Infrastructure
+
+ * Test against py37 in buildspec
+
+## v1.6.22 (2020-04-20)
+
+### Bug Fixes and Other Changes
+
+ * TF EIA 1.15 and 2.0
+
+## v1.6.21 (2020-04-16)
+
+### Bug Fixes and Other Changes
+
+ * Replaced deprecated aws ecr get-login by get-login-password
+
+## v1.6.20 (2020-04-03)
+
+### Bug Fixes and Other Changes
+
+ * Updating Pyyaml and Awscli version for tf1.15
+ * upgrade Pillow version in test example
+
+## v1.6.19 (2020-04-01)
+
+### Bug Fixes and Other Changes
+
+ * Allowing arguments for deep_learning_container.py for tf
+
+## v1.6.18 (2020-03-26)
+
+### Bug Fixes and Other Changes
+
+ * Adding of deep_learning_container.py
+
+## v1.6.17 (2020-02-18)
+
+### Bug Fixes and Other Changes
+
+ * update: Remove multi-model label from CPU containers
+
+## v1.6.16 (2020-02-17)
+
+### Bug Fixes and Other Changes
+
+ * update r2.0.1 dockerfiles
+ * add 2.1 dockerfiles and tensorflow artifacts
+ * update for 1.15.2
+
+## v1.6.15 (2020-02-04)
+
+### Bug Fixes and Other Changes
+
+ * return on_delete method when model successfully deleted
+ * validate tensorflow model version number in model path
+
+## v1.6.14.post0 (2020-01-20)
+
+### Documentation changes
+
+ * document that pre-/post-processing is not supported with multi-model
+
 ## v1.6.14 (2020-01-10)
 
 ### Bug fixes and other changes
