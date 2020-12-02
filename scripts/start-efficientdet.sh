@@ -25,6 +25,6 @@ $docker_command run \
     -e "SAGEMAKER_BIND_TO_PORT=8080" \
     -e "SAGEMAKER_SAFE_PORT_RANGE=9000-9999" \
     -e "SAGEMAKER_MODEL_SERVER_TIMEOUT=600" \
-    -e "AWS_ACCESS_KEY_ID=AKIAIUYXRK7DUY6HD7GA" \
-    -e "AWS_SECRET_ACCESS_KEY=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" \
+    -e "AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}" \
+    -e "AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}" \
     $repository:$full_version-$device serve > log.txt 2>&1 &
